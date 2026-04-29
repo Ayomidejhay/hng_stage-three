@@ -235,12 +235,12 @@ export default function DashboardPage() {
     name,
     description,
     frequency,
-    daysOfWeek,
+    // daysOfWeek,
   }: {
     name: string;
     description: string;
     frequency: Habit["frequency"];
-    daysOfWeek: NonNullable<Habit["daysOfWeek"]>;
+    // daysOfWeek: NonNullable<Habit["daysOfWeek"]>;
   }) => {
     if (!session) return;
 
@@ -250,7 +250,7 @@ export default function DashboardPage() {
         name,
         description,
         frequency,
-        daysOfWeek: frequency === "custom" ? daysOfWeek : undefined,
+        // daysOfWeek: frequency === "custom" ? daysOfWeek : undefined,
       };
 
       persistHabits(habits.map((h) => (h.id === editing.id ? updated : h)));
@@ -265,7 +265,7 @@ export default function DashboardPage() {
       name,
       description,
       frequency,
-      daysOfWeek: frequency === "custom" ? daysOfWeek : undefined,
+      // daysOfWeek: frequency === "custom" ? daysOfWeek : undefined,
       createdAt: new Date().toISOString(),
       completions: [],
     };
